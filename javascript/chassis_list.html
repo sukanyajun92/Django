@@ -1,0 +1,22 @@
+{% load rest_framework %}
+{% load staticfiles %}
+<html>
+	<link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+	<body>
+		<h1>Chassis</h1>
+		<table>
+			<th> TIME </th>
+			<th> TOTAL_SUBSCRIBERS </th>
+			<th> TOTAL_CALLS_CONNECTED_SEC </th>
+			<th> TOTAL_CALLS_DISCONNECTED_SEC </th>
+			{% for c in chassis %}
+				<tr>
+					<td>  {{ c.TIME }}  </td>
+				    <td>  {{ c.TOTAL_SUBSCRIBERS }}  </td>
+				    <td>  {{ c.TOTAL_CALLS_CONNECTED_SEC }} </td>
+				    <td> {{ c.TOTAL_CALLS_DISCONNECTED_SEC }} </td>
+				</tr>
+			{% endfor %}
+		</table>
+	</body>
+</html>
